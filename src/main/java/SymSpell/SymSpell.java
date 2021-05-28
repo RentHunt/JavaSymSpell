@@ -256,6 +256,16 @@ public class SymSpell {
         return true;
     }
 
+    public boolean createDictionary(Set<String> corpus) {
+        SuggestionStage staging = new SuggestionStage(16384);
+        for (String s : corpus) {
+            createDictionaryEntry(s, 1, staging);
+        }
+        if (this.deletes == null) this.deletes = new HashMap<>(staging.deleteCount());
+        commitStaged(staging);
+        return true;
+    }
+
     public void purgeBelowThresholdWords() {
         belowThresholdWords = new HashMap<String, Long>();
     }
