@@ -7,7 +7,7 @@ wrapper {
 }
 
 group 'ai.roof'
-version '1.0.0'
+version '1.1.1'
 
 apply plugin: 'idea'
 apply plugin: 'java'
@@ -23,7 +23,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'ai.roof'
             artifactId = 'symspell'
-            version = '1.1.0'
+            version = '1.1.1'
 
             from components.java
         }

@@ -32,7 +32,7 @@ import java.util.Map;
 public class SuggestionStage {
     SuggestionStage(int initialCapacity) {
         deletes = new HashMap<>(initialCapacity);
-        nodes = new ChunkArray<>(initialCapacity * 2);
+        nodes = new ChunkArray<Node>(initialCapacity * 2);
     }
 
     public class Node {
